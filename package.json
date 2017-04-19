@@ -16,8 +16,11 @@
     "systemjs-builder": "0.15.32"
   },
   "dependencies": {
+    "brightspot-base": "perfectsense/brightspot-base#master",
     "gulp-clean-css": "2.0.13",
-    "gulp-load-plugins": "1.4.0"
+    "gulp-load-plugins": "1.4.0",
+    "jquery": "2.1.4"
+    
   },
   "scripts": {
     "gulp": "gulp",

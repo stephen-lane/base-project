@@ -23,6 +23,7 @@ gulp.task(styleguide.task.js(), (done) => {
   builder.config({
     defaultJSExtensions: true,
     map: {
+        'jquery': 'node_modules/jquery/dist/jquery.min.js',
 //      'bsp-utils': 'node_modules/bsp-utils/bsp-utils.js'
     }
   })
@@ -31,7 +32,7 @@ gulp.task(styleguide.task.js(), (done) => {
     minify: false
   }
 
-  builder.buildStatic('styleguide/All.js', buildOptions).then((output) => {
+builder.buildStatic('styleguide/All.js', buildOptions).then(output => {
     gulp.src([ ])
       .pipe(plugins.file('styleguide/All.js', output.source))
       .pipe(gulp.dest(styleguide.path.build()))
@@ -41,8 +42,9 @@ gulp.task(styleguide.task.js(), (done) => {
       .pipe(plugins.sourcemaps.write('.'))
       .pipe(gulp.dest(styleguide.path.build()))
       .on('end', done)
-  })
+  }).catch(styleguide.handleError)
 })
+
 
 gulp.task(styleguide.task.extra('TASKNAME_GOES_HERE'), () => {
   // create a custom build task here

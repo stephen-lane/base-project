@@ -1,13 +1,16 @@
 package content.article;
 
-import com.psddev.cms.db.Content;
+import com.psddev.cms.db.Directory;
 import com.psddev.cms.db.PageFilter;
+import com.psddev.cms.db.Site;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.view.ViewBinding;
 import com.psddev.dari.db.Recordable;
 
-@ViewBinding(value = ArticleViewModel.class, types = PageFilter.PAGE_VIEW_TYPE)
-public class Article extends Content {
+import content.page.Page;
+
+@ViewBinding(value = ArticleBodyViewModel.class)
+public class Article extends Page implements Directory.Item {
 
     @Recordable.Required
     private String headline;
@@ -29,6 +32,12 @@ public class Article extends Content {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    @Override
+    public String createPermalink(Site site) {
+        // TODO Auto-generated method stub
+        return null;
     }
 }
 

@@ -1,0 +1,10 @@
+{
+    "_template": "/node_modules/brightspot-base/styleguide/core/page/Page.hbs",
+
+    "title": "Styleguide",
+    "description": "Base Project Styleguide",
+    "keywords": "Base Project, Styleguide",
+    "body": {
+        "_delegate": true
+    }
+}
